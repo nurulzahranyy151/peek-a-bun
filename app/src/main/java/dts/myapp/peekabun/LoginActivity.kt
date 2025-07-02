@@ -20,15 +20,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // Initialize UI components
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
 
-        // Handle login
+
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
@@ -43,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
                     val userId = authResult.user?.uid
                     if (userId != null) {
                         Log.d("Login", "Authenticated user UID: $userId")
-                        // Check user role
+
                         FirebaseDatabase.getInstance("https://peek-a-bun-default-rtdb.asia-southeast1.firebasedatabase.app")
                             .getReference("users/$userId/role")
                             .get()
@@ -53,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
                                 if (role == "admin") {
                                     startActivity(Intent(this, AdminActivity::class.java))
                                 } else {
-                                    // Store customer role if not already set
                                     if (role == null) {
                                         FirebaseDatabase.getInstance("https://peek-a-bun-default-rtdb.asia-southeast1.firebasedatabase.app")
                                             .getReference("users/$userId")
@@ -81,7 +78,6 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        // Redirect if already logged in
         auth.currentUser?.let { user ->
             FirebaseDatabase.getInstance("https://peek-a-bun-default-rtdb.asia-southeast1.firebasedatabase.app")
                 .getReference("users/${user.uid}/role")

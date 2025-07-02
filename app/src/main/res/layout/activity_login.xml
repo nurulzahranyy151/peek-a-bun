@@ -3,7 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="50dp">
+    android:padding="50dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="Welcome to Peek A Bun!"
+        android:textSize="50sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="clip_horizontal|center|clip_vertical"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:paddingBottom="10dp"
+        android:text="Sweeten your day with our treats!" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="106dp"
+        android:layout_gravity="center"
+        android:src="@drawable/login"
+        />
 
     <TextView
         android:layout_width="wrap_content"

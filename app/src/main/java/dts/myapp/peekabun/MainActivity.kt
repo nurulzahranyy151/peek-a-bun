@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         val orderButton: Button = findViewById(R.id.orderButton)
         logoutButton = findViewById(R.id.logoutButton)
 
-
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
@@ -81,7 +80,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         }
         recyclerView.adapter = adapter
 
-        // Handle order submission
         orderButton.setOnClickListener {
             val name = customerName.text.toString()
             val address = customerAddress.text.toString()
