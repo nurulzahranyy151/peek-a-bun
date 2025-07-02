@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "113997936706",
+    "firebase_url": "https://peek-a-bun-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "peek-a-bun",
+    "storage_bucket": "peek-a-bun.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113997936706:android:5c9f09c237b4ac881515db",
+        "android_client_info": {
+          "package_name": "dts.myapp.peekabun"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS6vAbVxm75vfppT-Bf-XKLhmYJ7hy-_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
