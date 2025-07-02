@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             return
         }
 
-        // Initialize UI components
         recyclerView = findViewById(R.id.recyclerView)
         customerName = findViewById(R.id.customerName)
         customerAddress = findViewById(R.id.customerAddress)
@@ -75,8 +74,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         val bakeryItems = listOf(
             BakeryItem("Croissant", "Buttery and flaky croissant", 2.5),
             BakeryItem("Chocolate Cake", "Rich chocolate layered cake", 15.0),
-            BakeryItem("Sourdough Bread", "Artisanal sourdough loaf", 5.0),
-            BakeryItem("Choco Lava Cake", "Sweet and moist lava cake with chocolate filling", 12.0)
+            BakeryItem("Sourdough Bread", "Artisanal sourdough loaf", 5.0)
         )
         adapter = BakeryItemAdapter(bakeryItems) { item ->
             Toast.makeText(this, "Selected: ${item.name}", Toast.LENGTH_SHORT).show()
@@ -99,7 +97,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 return@setOnClickListener
             }
 
-            // Check location permission for GPS
             if (ActivityCompat.checkSelfPermission(
                     this,
                     Manifest.permission.ACCESS_FINE_LOCATION
@@ -114,7 +111,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 return@setOnClickListener
             }
 
-            // GPS: Retrieve location coordinates
             Toast.makeText(this, "Fetching location...", Toast.LENGTH_SHORT).show()
             Log.d("GPS", "Attempting to fetch location")
             fusedLocationClient.lastLocation
@@ -141,7 +137,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 }
         }
 
-        // Handle logout
         logoutButton.setOnClickListener {
             auth.signOut()
             startActivity(Intent(this, LoginActivity::class.java))
